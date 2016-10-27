@@ -1,0 +1,43 @@
+sample practice app
+
+candidate firstname
+
+candidate middlename
+
+candidate lastname
+
+father firstname
+
+father middlename
+
+father lastname
+
+mother firstname
+
+mother middlename
+
+mother lastname
+
+candidate address
+
+candidate contactnumber
+
+candidate email
+
+father contactnumber
+
+father email
+
+mother contactnumber
+
+mother email
+
+candidate admissionno
+
+candidate currentstandard
+
+candidate appliedstandard
+
+father occupation
+
+mother occupation
