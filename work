@@ -1,0 +1,51 @@
+server------------------
+
+var express = require('express')
+   ,app = express()
+   ,bodyParser = require('body-parser')
+   ,mongoose = require('mongoose')
+   ,fs = require('fs');
+
+app.use(bodyParser.json());
+
+
+// Picks all files in routes folder and assign  
+// them as routes to locations represented by filename
+// Ex: login.js routes to url localhost/login
+
+var files = fs.readdirSync(__dirname+'/routes/');
+for(var i=0 ; i < files.length;i++){
+    app.use('/'+files[i].replace('.js',''),require('./routes/'+ files[i].replace('.js','')))
+}
+console.log(files);
+
+
+
+app.listen(4000,console.log('listening at port 4000'));
+
+login -------------------
+
+var express = express || require('express');
+var login = express.Router();
+
+login.get('/',function(req,res){
+    res.send('received a get at login');
+});
+
+login.post('/',function(req,res){
+    console.log(req.body);
+    res.json(req.body);
+});
+
+module.exports = login
+
+student ---------------
+
+var express = express || require('express');
+var student = express.Router();
+
+student.get('/',function(req,res){
+    res.send('received a get at student');
+});
+
+module.exports = student;
